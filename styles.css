@@ -18,7 +18,7 @@ h1 {
 .square {
     height: calc(100% * 1/16 - 1px);
     width: calc(100% * 1/16 - 1px);
-    border: 0.5px solid lightgrey;
+    border: 0.1px solid lightgrey;
 }
 
 #button-div {
