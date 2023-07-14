@@ -1,5 +1,8 @@
 const container = document.querySelector('#container');
 const slider = document.querySelector('#slider');
+const sliderValue = document.querySelector('#slider-value');
+
+sliderValue.textContent = `${slider.value} X ${slider.value}`
 
 function createSquares() {
     for (let i = 0; i < (slider.value * slider.value); i++) {
@@ -22,6 +25,7 @@ slider.addEventListener('input', () => {
     createSquares();
     activateSquares();
     active = false;
+    sliderValue.textContent = `${slider.value} X ${slider.value}`
 })
 
 const reset = document.querySelector('#reset');
@@ -64,5 +68,9 @@ let selectedColor = 'black';
 document.querySelectorAll('.color').forEach(item => {
     item.addEventListener('click', () => {
         selectedColor = item.classList[1];
+        document.querySelectorAll('.color').forEach(i => {
+            i.classList.remove('selected')
+        })
+        item.classList.add('selected');
     })
 })
